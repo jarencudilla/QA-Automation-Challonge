@@ -14,10 +14,17 @@ describe('Create Single Stage Tournaments', function () {
   it('Create Tournament Single Elimination', function (){
     cy.get(".button-dropdown")
       .click();
-    cy.get(".button-dropdown-menu > .item > .link" )
-      .contains("href:/tournaments/new", {force: true})
-      .click()
-
- });
+    // cy.get(".button-dropdown-menu > :nth-child(1)" )
+    //   .click({force: true})
+    cy.get(".button-dropdown-menu" )
+      .contains("Tournament")
+      .click({force: true})
+    cy.get(".form-group > #user_session_username_or_email")
+      .type('Jaren')
+    cy.get(".form-group > #user_session_password")
+      .type('12345678')
+    cy.get(".form-group > .btn")
+      .click()  
+  });
 
  });
