@@ -14,7 +14,7 @@ describe('Create Single Stage Tournaments', function () {
        .click()
   });
 
-  it('Create Tournament Single Elimination', function (){
+  it('Create Tournament Double Elimination', function (){
     cy.get(".button-dropdown")
       .click();
     cy.get(".button-dropdown-menu" )
