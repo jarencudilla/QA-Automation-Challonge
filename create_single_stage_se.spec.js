@@ -64,13 +64,13 @@ describe('Create Single Stage Tournaments', function () {
       .click()
     cy.get(':nth-child(6) > .match-report > .fa')
       .click()
-    // Reporting scores - Cypress error 
-    // cy.get('.striped-table > tbody > :nth-child(1) > :nth-child(2)')
-    //   .type('2')
-    // cy.get('.striped-table > tbody > :nth-child(2) > :nth-child(2)')
-    //   .type('3')
-    // cy.get('.mid > .btn')
-    //   .click()
+    // Reporting scores - Cypress error
+    cy.get(':nth-child(1) > :nth-child(2) > .form-control') // It works!!
+      .type('2',{ force: true })
+    cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+      .type('3',{ force: true })
+    cy.get('.mid > .btn')
+      .click()
   });
 
  });
