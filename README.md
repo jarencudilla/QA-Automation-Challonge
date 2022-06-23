@@ -47,15 +47,16 @@ describe('Visit Challonge Master Staging', function () {
 
   });
   ```
-I mostly use "cy.get" https://docs.cypress.io/api/commands/get, and "cy.click" https://docs.cypress.io/api/commands/click
+I mostly use ```cy.get``` [get](https://docs.cypress.io/api/commands/get), and ```cy.click``` [click](https://docs.cypress.io/api/commands/click)
 Also, I make it a habit to open a new browser and use devtools (Right click on a site -> select inspect)
 So you can check the DOM elements you would be targeting for your tests.
-(See screenshot)
+
 Don't worry about picking the wrong element, Cypress will definitely inform you via the Testrunner if it can't find what you want the test to look for or if there is an error. So you can modify/fix your test immediately without combing for tons of error messages and/or vague error codes.
+
 (Optional)
 
-I use VSCode https://code.visualstudio.com/download to create my Cypress tests and these plugins help make my life easier:
-ES6 Mocha Snippets https://marketplace.visualstudio.com/items?itemName=spoonscen.es6-mocha-snippets
-Cypress Snippets https://marketplace.visualstudio.com/items?itemName=andrew-codes.cypress-snippets
-Cypress Helper https://marketplace.visualstudio.com/items?itemName=Shelex.vscode-cy-helper
+I use [VSCode](https://code.visualstudio.com/download) to create my Cypress tests and these plugins help make my life easier:
+[ES6 Mocha Snippets](https://marketplace.visualstudio.com/items?itemName=spoonscen.es6-mocha-snippets)
+[Cypress Snippets](https://marketplace.visualstudio.com/items?itemName=andrew-codes.cypress-snippets)
+[Cypress Helper](https://marketplace.visualstudio.com/items?itemName=Shelex.vscode-cy-helper)
 Hopefully, this helps you get started in your Cypress journey.
