@@ -38,6 +38,7 @@ describe('Create Single Stage Tournaments', function () {
       .click()
     cy.get('.right > .btn')
       .click()
+      //adding participants
     cy.get(".tabbed-navlist")
       .contains("Participants")
       .click({force: true})
@@ -64,7 +65,7 @@ describe('Create Single Stage Tournaments', function () {
       .click()
     cy.get(':nth-child(6) > .match-report > .fa')
       .click()
-    // Reporting scores - Cypress error
+    // Reporting scores
     cy.get(':nth-child(1) > :nth-child(2) > .form-control') // It works!!
       .type('2',{ force: true })
     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
