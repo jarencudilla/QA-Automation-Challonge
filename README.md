@@ -56,7 +56,8 @@ Don't worry about picking the wrong element, Cypress will definitely inform you 
 (Optional)
 
 I use [VSCode](https://code.visualstudio.com/download) to create my Cypress tests and these plugins help make my life easier:
-[ES6 Mocha Snippets](https://marketplace.visualstudio.com/items?itemName=spoonscen.es6-mocha-snippets)
-[Cypress Snippets](https://marketplace.visualstudio.com/items?itemName=andrew-codes.cypress-snippets)
-[Cypress Helper](https://marketplace.visualstudio.com/items?itemName=Shelex.vscode-cy-helper)
+* [ES6 Mocha Snippets](https://marketplace.visualstudio.com/items?itemName=spoonscen.es6-mocha-snippets)
+* [Cypress Snippets](https://marketplace.visualstudio.com/items?itemName=andrew-codes.cypress-snippets)
+* [Cypress Helper](https://marketplace.visualstudio.com/items?itemName=Shelex.vscode-cy-helper)
+
 Hopefully, this helps you get started in your Cypress journey.
