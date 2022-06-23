@@ -56,16 +56,20 @@ describe('Create Single Stage Tournaments', function () {
     cy.get(".tabbed-navlist")
       .contains("Bracket")
       .click({force: true})
+    // Start Tournament  
     cy.get('.button_to > .btn')
       .click()
-    cy.get(".tabbed-navlist")
-      .contains("Report Scores")
-      .click()
-    cy.get('tbody > :nth-child(1) > :nth-child(6)')
-      .click()
-    cy.get(':nth-child(6) > .match-report > .fa')
-      .click()
-    // Reporting scores
+    //
+
+
+    // cy.get(".tabbed-navlist")
+    //   .contains("Report Scores")
+    //   .click()
+    // cy.get('tbody > :nth-child(1) > :nth-child(6)')
+    //   .click()
+    // cy.get(':nth-child(6) > .match-report > .fa')
+    //   .click()
+    // Reporting scores -- score reporting modal
     cy.get(':nth-child(1) > :nth-child(2) > .form-control') // It works!!
       .type('2',{ force: true })
     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
