@@ -51,6 +51,8 @@ describe('Create Single Stage Tournaments', function () {
       .type('Test 4{enter}')
       .type('Test 5{enter}')
       .type('Test 6{enter}')
+      .type('Test 7{enter}')
+      .type('Test 8{enter}')
     cy.get('.control-group > .pull-right > .btn')
       .click()
     cy.get(".tabbed-navlist")
@@ -59,7 +61,7 @@ describe('Create Single Stage Tournaments', function () {
     // Start Tournament  
     cy.get('.button_to > .btn')
       .click()
-    //
+    // from bracket > proceed to report scores without going to report scores tab
 
 
     // cy.get(".tabbed-navlist")
