@@ -12,10 +12,12 @@ function name(parameter1, parameter2, parameter3) {
 }
 ```
 To run a Cypress test in VSCode's terminal:
-You type ```npx cypress open``` This command opens up Cypress Test Runner
-Where it's easier to run Cypress tests individually
+You type ```npx cypress open``` This command opens up Cypress Test Runner.
+Where it's easier to run Cypress tests individually.
+
 I start my test based on Mocha's BDD "describe" and "it"
 https://mochajs.org/#bdd
+
 ```
 describe('Array', function () {
   before(function () {
