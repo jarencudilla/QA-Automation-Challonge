@@ -14,7 +14,7 @@ describe('Create Single Stage Tournaments', function () {
     //    .click()
     cy.login('Jaren', '12345678')
   });
-  
+
   it('Create Tournament Single Elimination', function (){
 
     cy.get(".button-dropdown")
@@ -67,29 +67,28 @@ describe('Create Single Stage Tournaments', function () {
     });
   describe('Reporting Scores', () => {
     it('Should report scores for all participant pairs', () => {
-            // cy.get(".form-group > #user_session_username_or_email")
-      //  .type('Jaren')
-      // cy.get(".form-group > #user_session_password")
-      //  .type('12345678')
-      // cy.get(".form-group > .btn")
-      //  .click()
-      // loop until all pairs are scored
-      var i = 0;
-      for (i = 0; i < 3 ; i++) {
+    // loop until all pairs are scored
       cy.get(".tabbed-navlist")
         .contains("Report Scores")
         .click({force: true})
-      cy.updatelogin('Jaren', '12345678')
-      cy.get(':nth-child(6) > .match-report > .fa')
-        .click()
-      cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+      // if (cy.get('.form-group > #user_session_username_or_email').then(($body))){
+      //     cy.updatelogin('Jaren', '12345678')
+      // } else {
+      cy.get('body').then(($body) => {
+          if ($body.text().includes('user_session_username_or_email')) {
+            cy.updatelogin('Jaren', '12345678')
+          } else {
+      var i = 0;
+      for (i = 0; i < 3 ; i++) {
+        cy.get(':nth-child(6) > .match-report > .fa')
+          .click()
+        cy.get(':nth-child(1) > :nth-child(2) > .form-control')
         .type('9',{ force: true })
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('6',{ force: true })
-      cy.get('.mid > .btn')
-      }
-    });
-
-  });
-
+        cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+          .type('6',{ force: true })
+        cy.get('.mid > .btn')
+     }
+   }})
+  })
  });
+});
