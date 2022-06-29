@@ -113,9 +113,9 @@ describe('Create Single Stage Tournaments', function () {
         cy.get(':nth-child(6) > .match-report > .fa')
           .click({force: true})
         cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-          .type('6',{force: true})
+          .type('3',{force: true})
         cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-          .type('11',{force: true})
+          .type('7',{force: true})
         cy.get('.mid > .btn')
           .click({force: true})
         cy.wait(1000)
@@ -143,9 +143,9 @@ describe('Create Single Stage Tournaments', function () {
       cy.get(':nth-child(6) > .match-report > .fa')
         .click({force: true})
       cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('41',{force: true})
+        .type('33',{force: true})
       cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('44',{force: true})
+        .type('32',{force: true})
       cy.get('.mid > .btn')
         .click({force: true})
       cy.wait(1000)
@@ -163,9 +163,9 @@ describe('Create Single Stage Tournaments', function () {
         .click({force: true, multiple: true})
       cy.wait(300)
       cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('33',{force: true})
+        .type('4',{force: true})
       cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('32',{force: true})
+        .type('6',{force: true})
       cy.get('.mid > .btn')
         .click({force: true})
       cy.wait(2000)
@@ -173,9 +173,9 @@ describe('Create Single Stage Tournaments', function () {
       cy.get(':nth-child(6) > .match-report > .fa')
         .click({force: true})
       cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('41',{force: true})
+        .type('4',{force: true})
       cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('44',{force: true})
+        .type('6',{force: true})
       cy.get('.mid > .btn')
         .click({force: true})
       cy.wait(1000)
@@ -203,27 +203,26 @@ describe('Create Single Stage Tournaments', function () {
       cy.get(':nth-child(6) > .match-report > .fa')
         .click({force: true})
       cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('13',{force: true})
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
         .type('12',{force: true})
+      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+        .type('13',{force: true})
       cy.get('.mid > .btn')
         .click({force: true})
       cy.wait(1000)
     }})
   });
-describe('Ending the Tournament', () => {
-  it('Should end the SE Tournament', () => {
-    cy.get(".tabbed-navlist")
-      .contains("Bracket")
-      .click({force: true})
+  describe('Ending the Tournament', () => {
+    it('Should end the SE Tournament', () => {
+      cy.get(".tabbed-navlist")
+        .contains("Bracket")
+        .click({force: true})
     //login first
-    cy.get('.nav-list > :nth-child(2) > .link')
-      .click()
+      cy.get('.nav-list > :nth-child(2) > .link')
+        .click()
       cy.updatelogin('Jaren', '12345678')
     // if logged in end tournament button should appear
-    cy.get('.button_to > .btn')
-      .click()
-  });
+      cy.get('.button_to > .btn')
+        .click()
+    });
 });
-
 });
