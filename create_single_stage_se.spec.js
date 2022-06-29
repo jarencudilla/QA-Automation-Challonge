@@ -211,4 +211,19 @@ describe('Create Single Stage Tournaments', function () {
       cy.wait(1000)
     }})
   });
+describe('Ending the Tournament', () => {
+  it('Should end the SE Tournament', () => {
+    cy.get(".tabbed-navlist")
+      .contains("Bracket")
+      .click({force: true})
+    //login first
+    cy.get('.nav-list > :nth-child(2) > .link')
+      .click()
+      cy.updatelogin('Jaren', '12345678')
+    // if logged in end tournament button should appear
+    cy.get('.button_to > .btn')
+      .click()
+  });
+});
+
 });
