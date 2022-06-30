@@ -1,8 +1,9 @@
+///<reference types="Cypress" />
+
 describe('Create Single Stage Tournaments', function () {
   Cypress.on('uncaught:exception', (err, runnable) => {
     return false;
   });
-
   it('Login to Master Staging', function (){
     cy.login('Jaren', '12345678')
   });
@@ -85,8 +86,8 @@ describe('Create Single Stage Tournaments', function () {
             cy.wait(1000)
           }
         }})
-        //2nd round of scoring
   });
+  //2nd round of scoring
   describe('Reporting Scores Round 2', () => {
     it('Should report scores for the 2nd round all participant pairs', () => {
     // loop until all pairs are scored
@@ -95,7 +96,7 @@ describe('Create Single Stage Tournaments', function () {
         .click({force: true})
     if (cy.get('.form-group > #user_session_username_or_email')) {
       cy.updatelogin('Jaren', '12345678')
-    //loop scoring 2 times  
+    //loop scoring 2 times
       for (var i = 0; i < 1 ; i++) {
         cy.get(':nth-child(6) > .match-report > .fa')
           .click({force: true, multiple: true})
@@ -122,6 +123,7 @@ describe('Create Single Stage Tournaments', function () {
       }
     }})
   });
+  //3rd round of scoring
   describe('Reporting Scores 3rd Round', () => {
     it('Should report scores for the 3rd round all participant pairs', () => {
       cy.get(".tabbed-navlist")
@@ -151,6 +153,7 @@ describe('Create Single Stage Tournaments', function () {
       cy.wait(1000)
     }})
   });
+  //Reporting Score - Semi Final
   describe('Reporting Scores Semi Final Round', () => {
     it('Should report scores for the Semi Final Round', () => {
     // loop until all pairs are scored
@@ -181,9 +184,9 @@ describe('Create Single Stage Tournaments', function () {
       cy.wait(1000)
     }})
   });
+  //Reporting Score - Final
   describe('Reporting Scores Final Round', () => {
     it('Should report scores for the Final Round', () => {
-    // loop until all pairs are scored
       cy.get(".tabbed-navlist")
         .contains("Report Scores")
         .click({force: true})
