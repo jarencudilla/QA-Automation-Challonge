@@ -63,10 +63,9 @@ describe('Create Single Stage Tournaments', function () {
         cy.updatelogin('Jaren', '12345678')
           //loop scoring n times
           // what if I loop it for 20 times and YOLO it!
-          var box = tr > td > match-report.length;
-          for (var i = 0; i < box ; i++) {
+          for (let i = 0; i < 10 ; i++) {
             cy.get(':nth-child(6) > .match-report > .fa')
-              .click({force: true, multiple: true})
+              .click({force: true})
             cy.get(':nth-child(1) > :nth-child(2) > .form-control')
               .type('9',{force: true})
             cy.get(':nth-child(2) > :nth-child(2) > .form-control')
@@ -75,9 +74,9 @@ describe('Create Single Stage Tournaments', function () {
               .click({force: true})
           }
         } else {
-          for (var i = 0; i < box ; i++) {
+          for (let i = 0; i < 10 ; i++) {
             cy.get(':nth-child(6) > .match-report > .fa')
-              .click({force: true, multiple: true})
+              .click({force: true})
             cy.get(':nth-child(1) > :nth-child(2) > .form-control')
               .type('9',{force: true})
             cy.get(':nth-child(2) > :nth-child(2) > .form-control')
