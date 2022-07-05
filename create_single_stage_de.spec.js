@@ -54,166 +54,166 @@ describe('Create Single Stage Tournaments', function () {
     });
   describe('Reporting Scores', () => {
     it('Should report scores for all participant pairs', () => {
-    // loop until all pairs are scored
+    // First round after scoring the first 2 pair loser's round appear +1
+    // Second lower bracket group appears, along with the second round +2
       cy.get(".tabbed-navlist")
         .contains("Report Scores")
         .click({force: true})
       if (cy.get('.form-group > #user_session_username_or_email')) {
         cy.updatelogin('Jaren', '12345678')
-          //loop scoring 4 times  
-          for (var i = 0; i < 3 ; i++) {
+          //loop scoring n times
+          // what if I loop it for 20 times and YOLO it!
+          var box = tr > td > match-report.length;
+          for (var i = 0; i < box ; i++) {
             cy.get(':nth-child(6) > .match-report > .fa')
               .click({force: true, multiple: true})
-              cy.wait(300)
             cy.get(':nth-child(1) > :nth-child(2) > .form-control')
               .type('9',{force: true})
             cy.get(':nth-child(2) > :nth-child(2) > .form-control')
               .type('6',{force: true})
             cy.get('.mid > .btn')
               .click({force: true})
-            cy.wait(2000)
           }
         } else {
-          for (var i = 0; i < 3 ; i++) {
+          for (var i = 0; i < box ; i++) {
             cy.get(':nth-child(6) > .match-report > .fa')
-              .click({force: true})
+              .click({force: true, multiple: true})
             cy.get(':nth-child(1) > :nth-child(2) > .form-control')
               .type('9',{force: true})
             cy.get(':nth-child(2) > :nth-child(2) > .form-control')
               .type('6',{force: true})
             cy.get('.mid > .btn')
               .click({force: true})
-            cy.wait(1000)
           }
         }})
   });
   //2nd round of scoring
-  describe('Reporting Scores Round 2', () => {
-    it('Should report scores for the 2nd round all participant pairs', () => {
-    // loop until all pairs are scored
-      cy.get(".tabbed-navlist")
-        .contains("Report Scores")
-        .click({force: true})
-    if (cy.get('.form-group > #user_session_username_or_email')) {
-      cy.updatelogin('Jaren', '12345678')
-    //loop scoring 2 times
-      for (var i = 0; i < 1 ; i++) {
-        cy.get(':nth-child(6) > .match-report > .fa')
-          .click({force: true, multiple: true})
-        cy.wait(300)
-        cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-          .type('3',{force: true})
-        cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-          .type('7',{force: true})
-        cy.get('.mid > .btn')
-          .click({force: true})
-        cy.wait(2000)
-     }
-    } else {
-      for (var i = 0; i < 1 ; i++) {
-        cy.get(':nth-child(6) > .match-report > .fa')
-          .click({force: true})
-        cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-          .type('3',{force: true})
-        cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-          .type('7',{force: true})
-        cy.get('.mid > .btn')
-          .click({force: true})
-        cy.wait(1000)
-      }
-    }})
-  });
+  // describe('Reporting Scores Round 2', () => {
+  //   it('Should report scores for the 2nd round all participant pairs', () => {
+  //   // loop until all pairs are scored
+  //     cy.get(".tabbed-navlist")
+  //       .contains("Report Scores")
+  //       .click({force: true})
+  //   if (cy.get('.form-group > #user_session_username_or_email')) {
+  //     cy.updatelogin('Jaren', '12345678')
+  //   //loop scoring 2 times
+  //     for (var i = 0; i < 5 ; i++) {
+  //       cy.get(':nth-child(6) > .match-report > .fa')
+  //         .click({force: true, multiple: true})
+  //       cy.wait(300)
+  //       cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //         .type('3',{force: true})
+  //       cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //         .type('7',{force: true})
+  //       cy.get('.mid > .btn')
+  //         .click({force: true})
+  //       cy.wait(2000)
+  //    }
+  //   } else {
+  //     for (var i = 0; i < 5 ; i++) {
+  //       cy.get(':nth-child(6) > .match-report > .fa')
+  //         .click({force: true})
+  //       cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //         .type('3',{force: true})
+  //       cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //         .type('7',{force: true})
+  //       cy.get('.mid > .btn')
+  //         .click({force: true})
+  //       cy.wait(1000)
+  //     }
+  //   }})
+  // });
   //3rd round of scoring
-  describe('Reporting Scores 3rd Round', () => {
-    it('Should report scores for the 3rd round all participant pairs', () => {
-      cy.get(".tabbed-navlist")
-        .contains("Report Scores")
-        .click({force: true})
-    if (cy.get('.form-group > #user_session_username_or_email')) {
-      cy.updatelogin('Jaren', '12345678')
-      cy.get(':nth-child(6) > .match-report > .fa')
-        .click({force: true, multiple: true})
-      cy.wait(300)
-      cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('33',{force: true})
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('32',{force: true})
-      cy.get('.mid > .btn')
-        .click({force: true})
-      cy.wait(2000)
-    } else {
-      cy.get(':nth-child(6) > .match-report > .fa')
-        .click({force: true})
-      cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('33',{force: true})
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('32',{force: true})
-      cy.get('.mid > .btn')
-        .click({force: true})
-      cy.wait(1000)
-    }})
-  });
+  // describe('Reporting Scores 3rd Round', () => {
+  //   it('Should report scores for the 3rd round all participant pairs', () => {
+  //     cy.get(".tabbed-navlist")
+  //       .contains("Report Scores")
+  //       .click({force: true})
+  //   if (cy.get('.form-group > #user_session_username_or_email')) {
+  //     cy.updatelogin('Jaren', '12345678')
+  //     cy.get(':nth-child(6) > .match-report > .fa')
+  //       .click({force: true, multiple: true})
+  //     cy.wait(300)
+  //     cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //       .type('33',{force: true})
+  //     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //       .type('32',{force: true})
+  //     cy.get('.mid > .btn')
+  //       .click({force: true})
+  //     cy.wait(2000)
+  //   } else {
+  //     cy.get(':nth-child(6) > .match-report > .fa')
+  //       .click({force: true})
+  //     cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //       .type('33',{force: true})
+  //     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //       .type('32',{force: true})
+  //     cy.get('.mid > .btn')
+  //       .click({force: true})
+  //     cy.wait(1000)
+  //   }})
+  // });
   //Reporting Score - Semi Final
-  describe('Reporting Scores Semi Final Round', () => {
-    it('Should report scores for the Semi Final Round', () => {
-    // loop until all pairs are scored
-      cy.get(".tabbed-navlist")
-        .contains("Report Scores")
-        .click({force: true})
-    if (cy.get('.form-group > #user_session_username_or_email')) {
-      cy.updatelogin('Jaren', '12345678')
-      cy.get(':nth-child(6) > .match-report > .fa')
-        .click({force: true, multiple: true})
-      cy.wait(300)
-      cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('4',{force: true})
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('6',{force: true})
-      cy.get('.mid > .btn')
-        .click({force: true})
-      cy.wait(2000)
-    } else {
-      cy.get(':nth-child(6) > .match-report > .fa')
-        .click({force: true})
-      cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('4',{force: true})
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('6',{force: true})
-      cy.get('.mid > .btn')
-        .click({force: true})
-      cy.wait(1000)
-    }})
-  });
+  // describe('Reporting Scores Semi Final Round', () => {
+  //   it('Should report scores for the Semi Final Round', () => {
+  //   // loop until all pairs are scored
+  //     cy.get(".tabbed-navlist")
+  //       .contains("Report Scores")
+  //       .click({force: true})
+  //   if (cy.get('.form-group > #user_session_username_or_email')) {
+  //     cy.updatelogin('Jaren', '12345678')
+  //     cy.get(':nth-child(6) > .match-report > .fa')
+  //       .click({force: true, multiple: true})
+  //     cy.wait(300)
+  //     cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //       .type('4',{force: true})
+  //     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //       .type('6',{force: true})
+  //     cy.get('.mid > .btn')
+  //       .click({force: true})
+  //     cy.wait(2000)
+  //   } else {
+  //     cy.get(':nth-child(6) > .match-report > .fa')
+  //       .click({force: true})
+  //     cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //       .type('4',{force: true})
+  //     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //       .type('6',{force: true})
+  //     cy.get('.mid > .btn')
+  //       .click({force: true})
+  //     cy.wait(1000)
+  //   }})
+  // });
   //Reporting Score - Final
-  describe('Reporting Scores Final Round', () => {
-    it('Should report scores for the Final Round', () => {
-      cy.get(".tabbed-navlist")
-        .contains("Report Scores")
-        .click({force: true})
-    if (cy.get('.form-group > #user_session_username_or_email')) {
-      cy.updatelogin('Jaren', '12345678')
-      cy.get(':nth-child(6) > .match-report > .fa')
-        .click({force: true, multiple: true})
-      cy.wait(300)
-      cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('12',{force: true})
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('13',{force: true})
-      cy.get('.mid > .btn')
-        .click({force: true})
-      cy.wait(2000)
-    } else {
-      cy.get(':nth-child(6) > .match-report > .fa')
-        .click({force: true})
-      cy.get(':nth-child(1) > :nth-child(2) > .form-control')
-        .type('12',{force: true})
-      cy.get(':nth-child(2) > :nth-child(2) > .form-control')
-        .type('13',{force: true})
-      cy.get('.mid > .btn')
-        .click({force: true})
-      cy.wait(1000)
-    }})
-  });
+  // describe('Reporting Scores Final Round', () => {
+  //   it('Should report scores for the Final Round', () => {
+  //     cy.get(".tabbed-navlist")
+  //       .contains("Report Scores")
+  //       .click({force: true})
+  //   if (cy.get('.form-group > #user_session_username_or_email')) {
+  //     cy.updatelogin('Jaren', '12345678')
+  //     cy.get(':nth-child(6) > .match-report > .fa')
+  //       .click({force: true, multiple: true})
+  //     cy.wait(300)
+  //     cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //       .type('12',{force: true})
+  //     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //       .type('13',{force: true})
+  //     cy.get('.mid > .btn')
+  //       .click({force: true})
+  //     cy.wait(2000)
+  //   } else {
+  //     cy.get(':nth-child(6) > .match-report > .fa')
+  //       .click({force: true})
+  //     cy.get(':nth-child(1) > :nth-child(2) > .form-control')
+  //       .type('12',{force: true})
+  //     cy.get(':nth-child(2) > :nth-child(2) > .form-control')
+  //       .type('13',{force: true})
+  //     cy.get('.mid > .btn')
+  //       .click({force: true})
+  //     cy.wait(1000)
+  //   }})
+  // });
   describe('Ending the Tournament', () => {
     it('Should end the SE Tournament', () => {
       cy.get(".tabbed-navlist")
