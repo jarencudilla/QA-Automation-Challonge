@@ -28,7 +28,12 @@ describe('Create Single Stage Tournaments', function () {
       .click()
     cy.get('.right > .btn')
       .click()
+  });
+
       //adding participants
+  it('Add Participants', function (){
+    //my access has been upgraded to PMv2, this test was for the old version of adding participants.
+
     cy.get(".tabbed-navlist")
       .contains("Participants")
       .click({force: true})
@@ -51,7 +56,8 @@ describe('Create Single Stage Tournaments', function () {
     // Start Tournament
     cy.get('.button_to > .btn')
       .click()
-    });
+  });
+
   describe('Reporting Scores', () => {
     it('Should report scores for all participant pairs', () => {
     // First round after scoring the first 2 pair loser's round appear +1
@@ -63,9 +69,9 @@ describe('Create Single Stage Tournaments', function () {
         cy.updatelogin('Jaren', '12345678')
           //loop scoring n times
           // what if I loop it for 20 times and YOLO it!
-          for (let i = 0; i < 10 ; i++) {
+          for (let i = 0; i < 20 ; i++) {
             cy.get(':nth-child(6) > .match-report > .fa')
-              .click({force: true})
+              .click({force: true, multiple: true})
             cy.get(':nth-child(1) > :nth-child(2) > .form-control')
               .type('9',{force: true})
             cy.get(':nth-child(2) > :nth-child(2) > .form-control')
@@ -74,9 +80,9 @@ describe('Create Single Stage Tournaments', function () {
               .click({force: true})
           }
         } else {
-          for (let i = 0; i < 10 ; i++) {
+          for (let i = 0; i < 20 ; i++) {
             cy.get(':nth-child(6) > .match-report > .fa')
-              .click({force: true})
+              .click({force: true, multiple: true})
             cy.get(':nth-child(1) > :nth-child(2) > .form-control')
               .type('9',{force: true})
             cy.get(':nth-child(2) > :nth-child(2) > .form-control')
