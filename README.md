@@ -1,4 +1,4 @@
-# Challonge-Tests
+# QA-Automation-Challonge
 Cypress Automation Tests for Challonge Master Staging.
 
 ## What I've learned creating Cypress tests:
